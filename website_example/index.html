@@ -201,6 +201,9 @@ $(function(){
         $('#menu-content').append('<div id="mLangSelector"></div>');
 	renderLangSelector();
     }
+    if (typeof webw !== 'undefined' && webw) {
+        $('#menu-content').append('<li><a target="_new" href="'+webw+'"><i class="fa fa-address-card-o"></i> <span tkey="webw">Web Wallet</span></a></li>');
+    }
 	
     // Load live statistics for the first time
     loadLiveStats();
