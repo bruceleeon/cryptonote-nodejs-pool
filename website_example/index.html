@@ -22,7 +22,8 @@
 
     <!-- Navigation -->
     <div class="nav-side-menu">
-        <div class="brand"><a href="/"><span id="coinSymbol"></span> <span tkey="miningPool">Mining Pool</span></a></div>
+        <div class="brand"><a href="https://codpool.com"><img src="themes/CODLogo.png"></a><br>
+        <img src="themes/coin.png"> <span id="coinSymbol"></span></div>
         <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>  
         <div class="menu-list">
             <ul id="menu-content" class="menu-content collapsed out">
@@ -79,10 +80,43 @@
     
     <!-- Page content -->
     <div id="page-wrapper">
+	<div class="pricing" align="center">
+		<script type="text/javascript">
+		baseUrl = "https://widgets.cryptocompare.com/";
+		var scripts = document.getElementsByTagName("script");
+		var embedder = scripts[ scripts.length - 1 ];
+		var cccTheme = {"General":{"background":"f3f5f7","enableMarquee":true}};
+		(function (){
+		var appName = encodeURIComponent(window.location.hostname);
+		if(appName==""){appName="local";}
+		var s = document.createElement("script");
+		s.type = "text/javascript";
+		s.async = true;
+		var theUrl = baseUrl+'serve/v3/coin/header?fsyms=BTC,ETH,XMR,LTC,ETC&tsyms=USD';
+		s.src = theUrl + ( theUrl.indexOf("?") >= 0 ? "&" : "?") + "app=" + appName;
+		embedder.parentNode.appendChild(s);
+		})();
+		</script>
+	</div>
+	<!-- MRR ADD -->
+	<div style="margin-top:10px;width:100%;">
+		<center><script type="text/javascript" src="https://computingondemand.com/advertising/direct/js.php#type=banner&align=center&zone=1"></script></center>
+	</div>			
+	<!-- Normal Operation -->
+	<div style="border-radius:5px;padding:14px;background-color:#65bb6b;color:#fff;margin-top:5px;width:100%;">
+		<center>Pool Operation: Normal</a></center>
+	</div>
+	<!-- Notification 
+	<div style="border-radius:5px;padding:14px;background-color:#262626;color:#fff;margin-top:5px;width:100%;">
+		<center>NOTE: pool has not found a block yet, payments should work but need to validate</a></center>
+	</div>-->
+	<!-- Pool Warning 
+	<div style="border-radius:5px;padding:14px;background-color:#ff0000;color:#fff;margin-top:25px;width:100%;">
+		<center>Pool Operation: Testing - This pool is not fully tested - mine at your own risk</a></center>
+	</div>-->
         <div id="page"></div>
         <p id="loading" class="text-center"><i class="fa fa-circle-o-notch fa-spin"></i></p>
     </div>
-    
 </div>
 
 <!-- Footer -->
